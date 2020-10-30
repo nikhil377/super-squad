@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './components/App';
+import rootReducer from './reducers/index';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import {addCharacterById} from './actions/index';
+
+const store =createStore(rootReducer);
+// get current state
+console.log("store.getState()",store.getState());
+
+// every time there is change in state subscribe will be called.
+store.subscribe(()=>console.log('store data',store.getState()));
+store.dispatch(addCharacterById(2));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
