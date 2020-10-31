@@ -1,4 +1,4 @@
-import { ADD_CHARACTER, REMOVE_CHARACTER } from '../actions';
+import { ADD_CHARACTER, REMOVE_CHARACTER, RESET_CHARACTER } from '../actions';
 import { createCharacter } from './helpers';
 // super squad hero addition that's why taking state as empty at first
 
@@ -10,6 +10,9 @@ function heroes(state = [], action) {
       return heroes;
     case REMOVE_CHARACTER:
       heroes = state.filter(item => item.id !== action.id);
+      return heroes;
+    case RESET_CHARACTER:
+      heroes=[];
       return heroes;
     default: 
       return state;

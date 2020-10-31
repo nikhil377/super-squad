@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeCharacterById } from '../actions';
+import { removeCharacterById , resetCharacterBy} from '../actions';
+import {bindActionCreators} from 'redux';
 
 class HeroList extends Component {
   render() {
     return (
       <div>
         <h4>Your Hero Squad</h4>
+        <button className="" onClick={()=> this.props.resetCharacterBy()}>Reset</button>
         <ul className="list-group">
           {
             this.props.heroes.map(hero => {
@@ -36,5 +38,8 @@ function mapStateToProps(state) {
     heroes: state.heroes
   }
 }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({ removeCharacterById,resetCharacterBy }, dispatch)
+}
 
-export default connect(mapStateToProps, { removeCharacterById })(HeroList);
+export default connect(mapStateToProps, mapDispatchToProps)(HeroList);
