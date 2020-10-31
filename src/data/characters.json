@@ -40,34 +40,34 @@
     "strength": 8,
     "intelligence": 7,
     "speed": 8
-    },
-    {
+  },
+  {
     "id": 6,
     "name": "Cyborg",
     "strength": 9,
     "intelligence": 8,
     "speed": 6
-    },
-    {
+  },
+  {
     "id": 7,
     "name": "Green Arrow",
     "strength": 5,
     "intelligence": 9,
     "speed": 7
-    },
-    {
+  },
+  {
     "id": 8,
     "name": "Hawkman",
     "strength": 5,
     "intelligence": 8,
     "speed": 8
-    },
-    {
+  },
+  {
     "id": 9,
     "name": "Supergirl",
     "strength": 10,
     "intelligence": 9,
     "speed": 7
-    }
+  }
 ]
     
